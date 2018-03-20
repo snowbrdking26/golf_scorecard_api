@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::API
   include DeviseTokenAuth::Concerns::SetUserByToken
   before_action :configure_permitted_parameters, if: :devise_controller?
-  #   :include ActionController::RequestForgeryProtection
-#   protect_from_forgery with: :exception
-#   helper_method :current_user, :logged_in, :authorize
+    # :include ActionController::RequestForgeryProtection
+  # protect_from_forgery with: :exception
+  # helper_method :current_user, :logged_in, :authorize
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::API
   def authorize
     redirect_to login_path unless logged_in
   end
-  
+
 
   protected
 

@@ -4,7 +4,7 @@ class GolfersController < ApplicationController
   # GET /golfers
   def index
     @golfers = Golfer.all
-
+# @golfers = current_user.Golfer.all
     render json: @golfers.to_json(include: :scorecards)
   end
 
@@ -16,6 +16,7 @@ class GolfersController < ApplicationController
   # POST /golfers
   def create
     @golfer = Golfer.new(golfer_params)
+    # @golfer = current_user.Golfer.build(golfer_params)
 
     if @golfer.save
       render json: @golfer, status: :created, location: @golfer
@@ -46,6 +47,6 @@ class GolfersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def golfer_params
-      params.require(:golfer).permit(:course, :player, :totalscore, :totalpar)
+      params.require(:golfer).permit(:course, :player, :totalscore, :totalpar, :user_id)
     end
 end
