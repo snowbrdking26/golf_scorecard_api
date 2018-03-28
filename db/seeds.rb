@@ -50,5 +50,5 @@
 #   { holenumber: 18, par: 4, score: 5, golfer_id: 2 }
 # ])
 
-User.create(email: 'user@example.com', nickname: 'UOne', name: 'User One', password: "monkey67")
+# User.create(email: 'user@example.com', nickname: 'UOne', name: 'User One', password: "monkey67")
 
