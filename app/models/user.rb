@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
   # has_many :scorecards
   # has_many :golfers, through: :scorecards
-  has_many :golfers
+  # has_many :golfers
 end
