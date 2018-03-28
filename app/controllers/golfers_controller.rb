@@ -4,7 +4,7 @@ class GolfersController < ApplicationController
   # GET /golfers
   def index
     @golfers = Golfer.all
-# @golfers = current_user.Golfer.all
+    # @golfers = current_user.Golfer.all
     render json: @golfers.to_json(include: :scorecards)
   end
 
